@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DonationService } from './donation.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MyProject';
+  obj1 = false;
+  text1 = 'יישות 1';
+  text2 = '100 ש""ח';
+
+  
+  constructor() { }
+
+  ngOnInit(): void {
+    
+  }
+  changObj():void {
+    this.obj1 = (this.obj1!)
+  }
 }
+  

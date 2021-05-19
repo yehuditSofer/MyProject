@@ -1,0 +1,81 @@
+<p>line-donation works!</p>
+<div class="row">
+    <div class="col-md-8">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">הוספת דיווח על עמותה</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>שם הישות המדיניות הזרה</label><label class="valid-must">*</label>
+                  <input ng-model="donationToSave.name" type="text" class="form-control" oninput="this.value = this.value.replace(/[^A-Za-zא-ת.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>סכום התרומה בש''ח</label><label class="valid-must">*</label>
+                  <input ng-model="sumPay" class="form-control" type="number" onchange="setTwoNumberDecimal" min="0" max="10" step="0.25" value="0.00">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">סוג הישות המדינית הזרה</label><label class="valid-must">*</label>
+                    <input ng-model="donationToSave.type" type="list" list="browsers" class="form-control"oninput="this.value = this.value.replace(/[^A-Za-zא-ת.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                    <datalist id="browsers">
+                      <option value="אופציה 1">
+                      <option value="אופציה 2">
+                      <option value="אופציה 3">
+                    </datalist>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>ייעוד התרומה</label><label class="valid-must">*</label>
+                  <input ng-model="donationToSave.designation" type="text" class="form-control"oninput="this.value = this.value.replace(/[^A-Za-zא-ת.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>התנאים לתרומה</label>
+                  <input ng-model="donationToSave.terms" type="text" class="form-control"oninput="this.value = this.value.replace(/[^A-Za-zא-ת.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>סוג המטבע</label><label class="valid-must">*</label>
+                  <input ng-model="donationToSave.CurrencyType" type="text" class="form-control" oninput="this.value = this.value.replace(/[^A-Za-zא-ת.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                  <datalist id="browsers">
+                    <option value="אופציה 1">
+                    <option value="אופציה 2">
+                    <option value="אופציה 3">
+                  </datalist>
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>שער ההמרה</label><label class="valid-must">*</label>
+                  <input ng-model="donationToSave.ExchangeRate" class="form-control" type="number" onchange="setTwoNumberDecimal" min="0" max="10" step="0.25" value="0.00" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div  class="my-button">
+                <button type="button" class="btn btn-round clean-button">ניקוי</button>
+                <button type="button" class="btn btn-primary btn-round save-button" ng-click="saveDonation()">שמירה</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
